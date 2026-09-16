@@ -34,6 +34,12 @@ Original git histories, credentials, database endpoints, private camera calibrat
 
 The source repositories did not expose root license files during review. No new license grant is asserted here. PyTorch, PyTorch3D, Plotly and other dependencies are installed from their own distributions and retain their own notices.
 
+## Supplied training notebook
+
+`notebooks/train_sctt.ipynb` is a reviewed adaptation of the user-supplied notebook with the same basename. Its metadata records the original SHA256 for traceability. The input file remains unchanged. The model class structure, 256-channel descriptor input, residual candidate refinement and masked L1 objective are retained; width/layers and training duration are reduced for CPU execution.
+
+The adaptation replaces private geographic bounds, external storage, archive extraction, experiment tracking and pretrained checkpoint paths with 48 synthetic JSON recipes and local outputs. It fixes CPU-only execution, normalizes candidates and targets consistently, uses separate training/validation/test rounds and labels saved checkpoints as weights-only. Its checkpoint dimensions differ from the web API model. Original execution and environment metadata are not carried over; any saved outputs come from the synthetic adaptation.
+
 ## Reference documentation
 
 - [PyTorch3D installation](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md)

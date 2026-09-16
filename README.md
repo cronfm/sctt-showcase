@@ -68,6 +68,25 @@ The bundled model is trained only on generated local geometry. Its synthetic des
 
 See [provenance and scope](docs/provenance.md) and the generated training metadata alongside the assets for details. Real-world localization requires a separately trained model and matching feature/calibration pipeline.
 
+## Train in the notebook
+
+[notebooks/train_sctt.ipynb](notebooks/train_sctt.ipynb) adapts the supplied training notebook for a short CPU run. It keeps the original 256-channel feature projector, candidate-conditioned encoder/decoder, refinement, masked L1 loss and warmup/cosine/tail schedule, with a smaller 64-unit, one-layer model.
+
+```bash
+python -m pip install -e ".[notebook]"
+jupyter lab notebooks/train_sctt.ipynb
+```
+
+Restart the kernel and run all cells. The included [demo dataset](sample_data/notebook_training.json) has 48 deterministic observation recipes: 32 training, 8 validation and 8 test examples in disjoint synthetic rounds. Position-encoded signatures are expanded to 256 dimensions; these are not real image descriptors. The notebook trains from scratch, plots learning curves, evaluates held-out examples and visualizes its own predictions in 3D.
+
+Outputs go to ignored `generated/notebook_demo/`: best/last tensor-only weights, metrics and a self-contained interactive scene. The notebook checkpoint uses different dimensions from the API model and does not replace it. Cloud mounts, tracking services and private inputs are removed. To verify the complete notebook in a fresh kernel:
+
+```bash
+python scripts/check_notebook.py
+```
+
+Regenerate its small input dataset with `python scripts/generate_notebook_data.py`.
+
 ## Development
 
 ```bash
@@ -87,6 +106,7 @@ src/sctt_showcase/    API, model, schemas, synthetic data loader, visualization
 static/              Interactive browser viewer
 sample_data/         Minimal example input
 examples/            Optional PyTorch3D demonstration
+notebooks/           CPU training notebook adapted from the supplied original
 scripts/             Synthetic-data and toy-training reproduction
 tests/               Inference, validation, API and visualization checks
 docs/                Provenance, PyTorch3D setup and release notes

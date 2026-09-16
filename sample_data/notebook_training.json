@@ -1,0 +1,660 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "description": "Local-metre positions and deterministic observation recipes. Location-encoded synthetic signatures, not camera features.",
+  "scale_m": [
+    4.0,
+    3.0,
+    2.0
+  ],
+  "desc_dim": 256,
+  "hidden_dim": 64,
+  "max_features": 12,
+  "top_k": 4,
+  "descriptor_projection_seed": 701,
+  "candidate_projection_seed": 702,
+  "candidates": [
+    {
+      "id": "anchor-01",
+      "position_m": [
+        -3,
+        -1.6,
+        1
+      ]
+    },
+    {
+      "id": "anchor-02",
+      "position_m": [
+        -1,
+        -2,
+        1.1
+      ]
+    },
+    {
+      "id": "anchor-03",
+      "position_m": [
+        1,
+        -2,
+        1
+      ]
+    },
+    {
+      "id": "anchor-04",
+      "position_m": [
+        3,
+        -1.6,
+        1.2
+      ]
+    },
+    {
+      "id": "anchor-05",
+      "position_m": [
+        3,
+        1.6,
+        1.1
+      ]
+    },
+    {
+      "id": "anchor-06",
+      "position_m": [
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "id": "anchor-07",
+      "position_m": [
+        -1,
+        2,
+        1.2
+      ]
+    },
+    {
+      "id": "anchor-08",
+      "position_m": [
+        -3,
+        1.6,
+        1
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "train-000",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4100,
+      "valid_features": 10,
+      "position_m": [
+        2.01606,
+        1.20091,
+        0.8718
+      ]
+    },
+    {
+      "id": "train-001",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4101,
+      "valid_features": 10,
+      "position_m": [
+        -1.12358,
+        0.67146,
+        1.25946
+      ]
+    },
+    {
+      "id": "train-002",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4102,
+      "valid_features": 10,
+      "position_m": [
+        2.29018,
+        0.32197,
+        0.80497
+      ]
+    },
+    {
+      "id": "train-003",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4103,
+      "valid_features": 6,
+      "position_m": [
+        2.3742,
+        0.41838,
+        0.93078
+      ]
+    },
+    {
+      "id": "train-004",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4104,
+      "valid_features": 12,
+      "position_m": [
+        0.41507,
+        1.13357,
+        0.9101
+      ]
+    },
+    {
+      "id": "train-005",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4105,
+      "valid_features": 10,
+      "position_m": [
+        1.93538,
+        -0.36133,
+        1.17202
+      ]
+    },
+    {
+      "id": "train-006",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4106,
+      "valid_features": 8,
+      "position_m": [
+        2.15637,
+        -1.4645,
+        1.18911
+      ]
+    },
+    {
+      "id": "train-007",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4107,
+      "valid_features": 11,
+      "position_m": [
+        0.97698,
+        -1.70064,
+        1.1864
+      ]
+    },
+    {
+      "id": "train-008",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4108,
+      "valid_features": 12,
+      "position_m": [
+        1.01567,
+        -1.24007,
+        0.97473
+      ]
+    },
+    {
+      "id": "train-009",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4109,
+      "valid_features": 9,
+      "position_m": [
+        2.24641,
+        0.21045,
+        0.8607
+      ]
+    },
+    {
+      "id": "train-010",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4110,
+      "valid_features": 10,
+      "position_m": [
+        -1.40574,
+        -1.58422,
+        1.12268
+      ]
+    },
+    {
+      "id": "train-011",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4111,
+      "valid_features": 12,
+      "position_m": [
+        1.23323,
+        -1.66271,
+        1.19024
+      ]
+    },
+    {
+      "id": "train-012",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4112,
+      "valid_features": 12,
+      "position_m": [
+        -0.55506,
+        1.54428,
+        0.88213
+      ]
+    },
+    {
+      "id": "train-013",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4113,
+      "valid_features": 11,
+      "position_m": [
+        -1.24574,
+        -1.73962,
+        0.92333
+      ]
+    },
+    {
+      "id": "train-014",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4114,
+      "valid_features": 7,
+      "position_m": [
+        -1.90782,
+        0.4884,
+        1.15364
+      ]
+    },
+    {
+      "id": "train-015",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4115,
+      "valid_features": 6,
+      "position_m": [
+        0.95659,
+        -0.24339,
+        1.07764
+      ]
+    },
+    {
+      "id": "train-016",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4116,
+      "valid_features": 8,
+      "position_m": [
+        -2.1552,
+        -1.22038,
+        0.87719
+      ]
+    },
+    {
+      "id": "train-017",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4117,
+      "valid_features": 8,
+      "position_m": [
+        -2.32968,
+        -0.3785,
+        1.13591
+      ]
+    },
+    {
+      "id": "train-018",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4118,
+      "valid_features": 7,
+      "position_m": [
+        -2.60594,
+        0.66225,
+        1.02823
+      ]
+    },
+    {
+      "id": "train-019",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4119,
+      "valid_features": 7,
+      "position_m": [
+        1.97868,
+        -1.58302,
+        0.89984
+      ]
+    },
+    {
+      "id": "train-020",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4120,
+      "valid_features": 10,
+      "position_m": [
+        2.27064,
+        1.76215,
+        1.15039
+      ]
+    },
+    {
+      "id": "train-021",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4121,
+      "valid_features": 12,
+      "position_m": [
+        0.61257,
+        -1.37523,
+        0.99505
+      ]
+    },
+    {
+      "id": "train-022",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4122,
+      "valid_features": 11,
+      "position_m": [
+        -2.18275,
+        -0.93785,
+        1.23811
+      ]
+    },
+    {
+      "id": "train-023",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4123,
+      "valid_features": 6,
+      "position_m": [
+        -2.65624,
+        -0.35286,
+        0.87017
+      ]
+    },
+    {
+      "id": "train-024",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4124,
+      "valid_features": 11,
+      "position_m": [
+        1.99472,
+        1.60173,
+        0.94464
+      ]
+    },
+    {
+      "id": "train-025",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4125,
+      "valid_features": 9,
+      "position_m": [
+        -1.60815,
+        -0.59076,
+        1.28986
+      ]
+    },
+    {
+      "id": "train-026",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4126,
+      "valid_features": 7,
+      "position_m": [
+        1.21123,
+        1.24629,
+        0.99519
+      ]
+    },
+    {
+      "id": "train-027",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4127,
+      "valid_features": 9,
+      "position_m": [
+        -0.33348,
+        0.83292,
+        1.23932
+      ]
+    },
+    {
+      "id": "train-028",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4128,
+      "valid_features": 7,
+      "position_m": [
+        -0.98489,
+        -0.61986,
+        1.10328
+      ]
+    },
+    {
+      "id": "train-029",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4129,
+      "valid_features": 12,
+      "position_m": [
+        1.03148,
+        1.42616,
+        1.11519
+      ]
+    },
+    {
+      "id": "train-030",
+      "split": "train",
+      "round_id": 0,
+      "feature_seed": 4130,
+      "valid_features": 8,
+      "position_m": [
+        1.03367,
+        -1.26617,
+        0.96167
+      ]
+    },
+    {
+      "id": "train-031",
+      "split": "train",
+      "round_id": 1,
+      "feature_seed": 4131,
+      "valid_features": 9,
+      "position_m": [
+        -0.71672,
+        -0.43959,
+        0.92053
+      ]
+    },
+    {
+      "id": "validation-000",
+      "split": "validation",
+      "round_id": 2,
+      "feature_seed": 5200,
+      "valid_features": 11,
+      "position_m": [
+        0.68753,
+        -0.10416,
+        1.21417
+      ]
+    },
+    {
+      "id": "validation-001",
+      "split": "validation",
+      "round_id": 2,
+      "feature_seed": 5201,
+      "valid_features": 7,
+      "position_m": [
+        -0.35618,
+        1.34313,
+        0.91892
+      ]
+    },
+    {
+      "id": "validation-002",
+      "split": "validation",
+      "round_id": 2,
+      "feature_seed": 5202,
+      "valid_features": 9,
+      "position_m": [
+        -1.39821,
+        1.48554,
+        1.09369
+      ]
+    },
+    {
+      "id": "validation-003",
+      "split": "validation",
+      "round_id": 2,
+      "feature_seed": 5203,
+      "valid_features": 10,
+      "position_m": [
+        -1.68773,
+        1.00049,
+        0.88373
+      ]
+    },
+    {
+      "id": "validation-004",
+      "split": "validation",
+      "round_id": 2,
+      "feature_seed": 5204,
+      "valid_features": 9,
+      "position_m": [
+        2.06308,
+        0.06392,
+        0.90518
+      ]
+    },
+    {
+      "id": "validation-005",
+      "split": "validation",
+      "round_id": 2,
+      "feature_seed": 5205,
+      "valid_features": 8,
+      "position_m": [
+        -0.75396,
+        -0.18096,
+        1.27396
+      ]
+    },
+    {
+      "id": "validation-006",
+      "split": "validation",
+      "round_id": 2,
+      "feature_seed": 5206,
+      "valid_features": 7,
+      "position_m": [
+        -2.60626,
+        0.53052,
+        0.87799
+      ]
+    },
+    {
+      "id": "validation-007",
+      "split": "validation",
+      "round_id": 2,
+      "feature_seed": 5207,
+      "valid_features": 9,
+      "position_m": [
+        1.97741,
+        1.00242,
+        1.11424
+      ]
+    },
+    {
+      "id": "test-000",
+      "split": "test",
+      "round_id": 3,
+      "feature_seed": 6300,
+      "valid_features": 11,
+      "position_m": [
+        0.09849,
+        -1.43943,
+        1.08853
+      ]
+    },
+    {
+      "id": "test-001",
+      "split": "test",
+      "round_id": 3,
+      "feature_seed": 6301,
+      "valid_features": 12,
+      "position_m": [
+        -2.61377,
+        0.18989,
+        0.91893
+      ]
+    },
+    {
+      "id": "test-002",
+      "split": "test",
+      "round_id": 3,
+      "feature_seed": 6302,
+      "valid_features": 7,
+      "position_m": [
+        1.91919,
+        -0.14709,
+        0.94449
+      ]
+    },
+    {
+      "id": "test-003",
+      "split": "test",
+      "round_id": 3,
+      "feature_seed": 6303,
+      "valid_features": 10,
+      "position_m": [
+        -2.14444,
+        0.52075,
+        1.21998
+      ]
+    },
+    {
+      "id": "test-004",
+      "split": "test",
+      "round_id": 3,
+      "feature_seed": 6304,
+      "valid_features": 6,
+      "position_m": [
+        -0.31762,
+        -1.62848,
+        1.26063
+      ]
+    },
+    {
+      "id": "test-005",
+      "split": "test",
+      "round_id": 3,
+      "feature_seed": 6305,
+      "valid_features": 8,
+      "position_m": [
+        1.82357,
+        -0.31093,
+        1.07838
+      ]
+    },
+    {
+      "id": "test-006",
+      "split": "test",
+      "round_id": 3,
+      "feature_seed": 6306,
+      "valid_features": 8,
+      "position_m": [
+        -0.23142,
+        1.77618,
+        1.23968
+      ]
+    },
+    {
+      "id": "test-007",
+      "split": "test",
+      "round_id": 3,
+      "feature_seed": 6307,
+      "valid_features": 12,
+      "position_m": [
+        -2.16718,
+        0.35705,
+        1.00125
+      ]
+    }
+  ]
+}
