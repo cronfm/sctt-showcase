@@ -1,0 +1,9 @@
+{
+  "sample_id": "loop-01",
+  "top_k": 4,
+  "candidate_offset_m": [
+    0,
+    0,
+    0
+  ]
+}

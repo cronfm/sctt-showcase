@@ -1,0 +1,14 @@
+# Direct runtime/test versions verified on Windows, Python 3.12.14.
+# Install torch from its CPU index first; use: pip install -e ".[dev]" -c constraints-verified.txt
+# PyTorch3D is installed separately with the pinned instructions in docs/pytorch3d.md.
+torch==2.14.0
+numpy==2.4.3
+fastapi==0.141.1
+starlette==1.6.0
+pydantic==2.13.5
+uvicorn==0.53.0
+plotly==6.6.0
+pytest==9.1.1
+httpx==0.28.1
+ruff==0.16.7
+build==1.6.1

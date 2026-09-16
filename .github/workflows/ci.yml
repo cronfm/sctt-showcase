@@ -1,0 +1,28 @@
+name: Test showcase
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -e '.[dev]' -c constraints-verified.txt
+      - run: python -m ruff check .
+      - run: python -m pytest
+      - name: Install real PyTorch3D point-cloud and transform components
+        env:
+          PYTORCH3D_NO_EXTENSION: '1'
+        run: |
+          python -m pip install setuptools wheel packaging iopath==0.1.10
+          python -m pip install --no-build-isolation 'https://github.com/facebookresearch/pytorch3d/archive/33824be3cbc87a7dd1db0f6a9a9de9ac81b2d0ba.zip#sha256=9f53ec2bb1ab11b3e0d8480ba5f4361407b5649cae26036fefaefb7f301e3c56'
+      - run: python -m pytest tests/test_visualization.py
+      - run: python -m build

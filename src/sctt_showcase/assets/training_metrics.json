@@ -1,0 +1,21 @@
+{
+  "scope": "Synthetic signatures with explicit normalized XYZ channels; NOT a real-world localization benchmark.",
+  "training_seed": 2026,
+  "holdout_seed": 2126,
+  "steps": 800,
+  "batch_size": 48,
+  "holdout_size": 256,
+  "initial_loss": 0.13591048121452332,
+  "final_loss": 0.0011991994688287377,
+  "holdout_mean_error_m": 0.17338737845420837,
+  "holdout_p95_error_m": 0.27423709630966187,
+  "elapsed_seconds": 4.3132959000067785,
+  "torch_version": "2.14.0+cpu",
+  "model_config": {
+    "desc_dim": 16,
+    "hidden_dim": 32,
+    "nhead": 4,
+    "num_layers": 1
+  },
+  "uncertainty": "Variance heads are relative weighting signals; not calibrated confidence intervals."
+}

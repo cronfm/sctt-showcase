@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore a synthetic SCTT pose-refinement example with a local API and interactive 3D point clouds.">
+  <title>SCTT · Spatial refinement lab</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/vendor/plotly.min.js" defer></script>
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="wordmark" aria-label="SCTT home"><span class="mark" aria-hidden="true">S</span>SCTT<span class="wordmark-sub">/ SHOWCASE</span></a>
+    <nav aria-label="Resources"><a href="#method">How it works</a><a href="/docs" target="_blank" rel="noopener">API explorer <span aria-hidden="true">↗</span></a></nav>
+    <span class="local-badge"><span></span>LOCAL DEMO</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">SINGLE CAMERA TRILATERATION TRANSFORMER · INTERACTIVE LAB</p><h1>A small scene.<br>A clearer view of refinement.</h1><p class="lede">Trace retrieved camera poses through a compact PyTorch model. Explore the point cloud, inspect candidate weights, and see the final position in 3D.</p></div>
+      <aside class="synthetic-note"><span class="note-icon" aria-hidden="true">◈</span><div><strong>Entirely synthetic. Intentionally small.</strong><p>Synthetic descriptors encode position. Procedural geometry and a toy model illustrate the workflow; results are not a real-world accuracy benchmark.</p></div></aside>
+    </section>
+
+    <section class="workspace" aria-label="Interactive pose refinement">
+      <aside class="controls panel">
+        <div class="panel-heading"><span class="step">01</span><h2>Set up a query</h2></div>
+        <form id="inference-form">
+          <label for="sample">Synthetic query</label>
+          <select id="sample" name="sample_id"><option value="loop-01">Loading samples…</option></select>
+          <div class="field-heading"><label for="top-k">Retrieved candidates</label><output id="top-k-value" for="top-k">4</output></div>
+          <input id="top-k" type="range" min="1" max="8" value="4" step="1">
+          <div class="range-labels"><span>1 candidate</span><span>8 candidates</span></div>
+          <fieldset><legend>Candidate offset <span>metres</span></legend><div class="offsets">
+            <div><label for="offset-x">X</label><input id="offset-x" type="number" step="0.1" min="-2" max="2" value="0"></div>
+            <div><label for="offset-y">Y</label><input id="offset-y" type="number" step="0.1" min="-2" max="2" value="0"></div>
+            <div><label for="offset-z">Z</label><input id="offset-z" type="number" step="0.1" min="-2" max="2" value="0"></div>
+          </div><p class="field-help">Move the retrieved poses to explore the model’s response.</p></fieldset>
+          <button type="submit" id="run" class="primary-button">Run refinement <span aria-hidden="true">→</span></button>
+          <button type="button" id="reset" class="text-button">Reset query settings</button>
+        </form>
+        <div class="scene-details"><p class="eyebrow">SCENE CONTENTS</p><dl><div><dt>Point cloud</dt><dd id="point-count">—</dd></div><div><dt>Reference cameras</dt><dd id="camera-count">—</dd></div><div><dt>Pose convention</dt><dd>XYZ + xyzw</dd></div></dl></div>
+        <p id="status" class="status" role="status" aria-live="polite">Loading the synthetic scene…</p>
+      </aside>
+
+      <div class="viewer panel">
+        <div class="viewer-toolbar"><div><p class="eyebrow">02 / INSPECT THE SCENE</p><h2>Synthetic room</h2></div><div class="segmented" role="group" aria-label="Point cloud coloring"><button id="rgb-mode" type="button" class="active" aria-pressed="true">RGB</button><button id="feature-mode" type="button" aria-pressed="false">Feature</button></div></div>
+        <div id="plot" role="img" aria-label="Interactive 3D synthetic room with camera trajectory, candidates, predicted position and ground truth"><div class="plot-loading">Preparing the 3D view…</div></div>
+        <div class="viewer-footer"><span><span aria-hidden="true">↻</span> Drag to orbit · scroll to zoom</span><label for="backend">View backend <select id="backend"><option value="plotly">Plotly · portable</option><option value="pytorch3d">PyTorch3D tensors · Plotly view</option></select></label></div>
+        <div id="view-error" class="view-error" role="alert" hidden></div>
+      </div>
+
+      <aside class="results panel">
+        <div class="panel-heading"><span class="step">03</span><h2>Inspect the result</h2></div>
+        <div class="metric-primary"><span>Position error / synthetic truth</span><strong id="error-value">—</strong><span class="metric-note">Toy example · metres<br>Synthetic descriptors encode position.</span></div>
+        <div class="metric-pair"><div><span>CPU inference</span><strong id="latency-value">—</strong></div><div><span>Top-K</span><strong id="k-value">—</strong></div></div>
+        <div class="coordinate-block"><span class="dot prediction"></span><h3>Predicted position</h3><output id="prediction-position">—</output></div>
+        <div class="coordinate-block"><span class="dot truth"></span><h3>Synthetic ground truth</h3><output id="truth-position">—</output></div>
+        <div class="candidate-heading"><h3>Candidate weights</h3><span>mean over XYZ</span></div><div id="candidate-list" class="candidate-list"><p class="muted">Run a query to inspect candidates.</p></div>
+        <p class="weight-note">Weights are relative contributions, not calibrated confidence.</p>
+      </aside>
+    </section>
+
+    <section class="bottom-grid" id="method">
+      <article class="method-card"><p class="eyebrow">THE WORKFLOW</p><h2>From candidates to coordinates.</h2><ol class="pipeline"><li><span>1</span><div><strong>Retrieve</strong><p>A synthetic query selects nearby reference poses.</p></div></li><li><span>2</span><div><strong>Refine</strong><p>A small PyTorch network learns candidate offsets and weights.</p></div></li><li><span>3</span><div><strong>Inspect</strong><p>Weighted positions, camera frusta and feature colors share one scene.</p></div></li></ol></article>
+      <article class="api-card"><div class="api-heading"><div><p class="eyebrow">A SMALL, DOCUMENTED API</p><h2>The same query. From your code.</h2></div><button type="button" id="copy-request" aria-label="Copy curl request">Copy</button></div><pre><code id="request-code">Loading request…</code></pre><div class="api-links"><a href="/docs" target="_blank" rel="noopener">Open interactive API docs ↗</a><a href="/api/scene" target="_blank" rel="noopener">View scene JSON ↗</a></div></article>
+      <article class="backend-card"><p class="eyebrow">PYTORCH3D INCLUDED</p><h2>Real structures.<br>Inspectable views.</h2><p>The optional backend builds real <code>Pointclouds</code>, reads their packed RGB tensors, and transforms camera quaternions with PyTorch3D. Plotly displays the result.</p><p class="muted">The standalone example also supports <code>plot_scene</code> and <code>PerspectiveCameras</code> with a full PyTorch3D installation. Displayed orientations are provided, not predicted.</p></article>
+    </section>
+  </main>
+  <footer><span>SCTT / Spatial refinement lab</span><span>Synthetic data · local API · no external assets</span></footer>
+</body>
+</html>
