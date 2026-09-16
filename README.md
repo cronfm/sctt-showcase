@@ -2,7 +2,7 @@
 
 A small, self-contained demonstration of candidate-conditioned camera localization in PyTorch. Explore a synthetic 3D scene, inspect a transformer's candidate refinements, and call the same model through a REST API.
 
-**Synthetic data and synthetic-trained weights only.** This illustrates the SCTT architecture and visualization workflow; it is not a production localizer or an accuracy benchmark. The repository starts private. Publishing it later is a separate decision.
+**Synthetic data and synthetic-trained weights only.** This illustrates the SCTT architecture and visualization workflow; it is not a production localizer or an accuracy benchmark.
 
 ## Run locally
 
@@ -112,4 +112,6 @@ tests/               Inference, validation, API and visualization checks
 docs/                Provenance, PyTorch3D setup and release notes
 ```
 
-No open-source license has been selected for this showcase. Dependency licenses remain with their respective authors; third-party model code and weights have not been vendored.
+## License
+
+This showcase is available under the [MIT License](LICENSE), including its code, notebook, documentation, synthetic demo data and toy-trained weights. Dependency licenses remain with their respective authors; third-party model code and weights have not been vendored. See [provenance](docs/provenance.md) for the adaptation scope.

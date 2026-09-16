@@ -1,11 +1,11 @@
-# Before a public release
+# Public release
 
-The GitHub repository is created **private**. No publishing or visibility change is automated.
+The showcase is released under the [MIT License](../LICENSE). Its standalone history contains only the showcase and the synthetic training notebook adaptation. The original SCTT repositories are unchanged.
 
-The standalone initial history contains only the showcase. Before choosing to make it public:
+For future releases:
 
 1. Review the included synthetic samples, toy model metadata and scope statement.
-2. Decide on the license and attribution you want to publish.
+2. Preserve the license and attribution notices.
 3. Run the test suite and inspect the viewer on the intended target platform.
 4. If you later add real input or weights, review that addition independently for credentials, data rights and privacy.
 

@@ -32,7 +32,7 @@ The separate `ground_truth` field is used for training/evaluation and display an
 
 Original git histories, credentials, database endpoints, private camera calibration, real datasets, production checkpoints, experiment tracking keys, IDE files, machine paths and third-party copied model trees are excluded. Original repositories remain unchanged.
 
-The source repositories did not expose root license files during review. No new license grant is asserted here. PyTorch, PyTorch3D, Plotly and other dependencies are installed from their own distributions and retain their own notices.
+The repository owner has released this showcase, including the adapted notebook, documentation, synthetic demo data and toy-trained weights, under the [MIT License](../LICENSE). This release does not change the licensing of the original repositories. PyTorch, PyTorch3D, Plotly and other dependencies are installed from their own distributions and retain their own notices.
 
 ## Supplied training notebook
 
